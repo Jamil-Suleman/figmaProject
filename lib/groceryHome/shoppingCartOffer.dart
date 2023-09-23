@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'productDetails4.dart';
+
 class Item {
   final String name;
   final String price;
@@ -67,12 +69,19 @@ class _ShoppingCartOfferState extends State<ShoppingCartOffer> {
 
               // Other images or widgets
               Positioned(
-                left: 0,
-                top: 0,
-                child: Image.asset(
-                  'asset/images/Fill.png',
-                  width: 100,
-                  height: 100,
+                top: 32,
+                left: 27,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProductDetail4()));
+                  },
+                  child: CircleAvatar(
+                      radius: 20,
+                      backgroundColor: Color.fromARGB(255, 233, 229, 229),
+                      child: Image.asset('asset/images/Fill1.png')),
                 ),
               ),
               // Add more Positioned widgets for additional images or widgets

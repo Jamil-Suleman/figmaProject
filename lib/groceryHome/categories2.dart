@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'myNavigatioBar.dart';
+import 'productDetails1.dart';
 
 class Categories2 extends StatefulWidget {
   const Categories2({super.key});
@@ -27,7 +28,7 @@ class _Categories2State extends State<Categories2> {
                 height: 40,
                 width: 150,
                 color: Colors.blue,
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Hey, Halal',
                     style: TextStyle(
@@ -166,8 +167,23 @@ class _Categories2State extends State<Categories2> {
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.orange[300],
                 ),
-                child: Image.asset(
-                  'asset/images/ImageIcon2.png',
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ProductDetail1()));
+                  },
+                  child: Center(
+                    child: Container(
+                      width: 70,
+                      height: 70,
+                      child: Image.asset(
+                        'asset/images/fishes.jpeg',
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
                 ),
               ),
               Container(

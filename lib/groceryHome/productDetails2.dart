@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'productDetails1.dart';
+import 'productDetails3.dart';
+
 class ProductDetail2 extends StatefulWidget {
   const ProductDetail2({super.key});
 
@@ -43,35 +46,31 @@ class _ProductDetail2State extends State<ProductDetail2> {
               right: 20,
               child: Image.asset('asset/images/bag1.png'),
             ),
-            // FractionallySizedBox(
-            //     alignment: Alignment.centerLeft,
-            //     widthFactor: 0, // Adjust the width factor as needed
-            //     child: Container(
-            //       width: 25,
-            //       height: 25,
-            //       decoration: BoxDecoration(
-            //         shape: BoxShape.circle,
-            //         color: Colors.yellow[600],
-            //         border: Border.all(
-            //           color: Colors.white,
-            //           width: 2,
-            //         ),
-            //       ),
-            // child: const Center(
-            //   child: Text(
-            //     '1',
-            //     style: TextStyle(
-            //       fontSize: 16,
-            //       color: Colors.white,
-            //     ),
-            //   ),
-            // ),
-            // )),
-            // Image.asset(
-            //   'asset/images/bag.png', // Replace with your image asset path
-            //   width: 63,
-            //   height: 80,
-            // )
+            Positioned(
+              left: 30,
+              top: 10,
+              child: Image.asset(
+                'asset/images/bag1.png',
+                width: 100,
+                height: 100,
+              ),
+            ),
+            Positioned(
+              top: 10,
+              left: 20,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProductDetail1()));
+                },
+                child: CircleAvatar(
+                    radius: 10,
+                    backgroundColor: Color.fromARGB(255, 233, 229, 229),
+                    child: Image.asset('asset/images/Fill1.png')),
+              ),
+            ),
           ]),
         ]),
         const SizedBox(
@@ -371,7 +370,8 @@ class _ProductDetail2State extends State<ProductDetail2> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Handle the first button click
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProductDetail3()));
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(16),

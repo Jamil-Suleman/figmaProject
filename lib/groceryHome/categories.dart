@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/rendering/box.dart';
 
+import 'categories2.dart';
 import 'data.dart';
 import 'myNavigatioBar.dart';
 
@@ -30,7 +31,7 @@ class _CategoriesState extends State<Categories> {
                   height: 40,
                   width: 250,
                   color: Colors.blue,
-                  child: Text(
+                  child: const Text(
                     'Hey, Halal',
                     style: TextStyle(
                       fontFamily: 'Manrope',
@@ -40,7 +41,7 @@ class _CategoriesState extends State<Categories> {
                     ),
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   top: 10,
                   right: 0,
                   child: Icon(Icons.search, color: Colors.white),
@@ -80,7 +81,7 @@ class _CategoriesState extends State<Categories> {
             width: MediaQuery.of(context).size.width,
             color: Colors.blue,
             child: RichText(
-              text: TextSpan(children: [
+              text: const TextSpan(children: [
                 TextSpan(
                   text: '  Shope',
                   style: TextStyle(
@@ -114,26 +115,41 @@ class _CategoriesState extends State<Categories> {
                 final text = cardItem['subName'];
                 final text2 = cardItem['Subname3'];
 
-                return Card(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 80, width: 100,
-                        //child: Image.asset(image)
-                      ),
-                      ListTile(
-                        tileColor: Color(0XF8F9FB),
-                        title: Text(title),
-                        subtitle: Text(text + text2),
-                        isThreeLine: true,
-                        trailing: const CircleAvatar(
-                            backgroundColor: Color(0xff0565b5),
-                            child: Icon(
-                              Icons.add,
-                              color: Colors.black,
-                            )),
-                      ),
-                    ],
+                return GestureDetector(
+                  onTap: () {
+                    switch (index) {
+                      case 0:
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Categories2()));
+                        break;
+                      case 1:
+                        break;
+                      // Add more cases for each card/screen as needed
+                      default:
+                        break;
+                    }
+                  },
+                  child: Card(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                            height: 80, width: 100, child: Image.asset(image)),
+                        ListTile(
+                          tileColor: Color(0XF8F9FB),
+                          title: Text(title),
+                          subtitle: Text(text + text2),
+                          isThreeLine: true,
+                          trailing: const CircleAvatar(
+                              backgroundColor: Color(0xff0565b5),
+                              child: Icon(
+                                Icons.add,
+                                color: Colors.black,
+                              )),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },

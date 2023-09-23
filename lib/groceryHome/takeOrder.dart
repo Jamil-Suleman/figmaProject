@@ -62,53 +62,56 @@ class _TakeOrderState extends State<TakeOrder> {
           ),
           Stack(children: [
             Container(
-                height: 320,
+                height: 350,
                 width: double.infinity,
-                child: Image.asset('asset/images/Mask Group.png')),
-            Positioned(
-              top: 100,
-              child: Container(
-                height: 100,
-                child: ListTile(
-                  leading: Image.asset('asset/images/lemon.png'),
-                  title: Text(
-                    'Big Fishes',
-                    style: const TextStyle(
-                      fontFamily: 'Manrope',
-                      fontSize: 14,
-                    ),
-                  ),
-                  subtitle: Text(
-                    '\$7.90',
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Manrope',
-                    ),
-                  ),
-                  trailing: Text(
-                    'ID: #765433',
-                    style: const TextStyle(
-                      fontSize: 14,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Manrope',
-                    ),
-                  ),
-                ),
-              ),
-            ),
+                child: Image.asset(
+                  'asset/images/Mask Group.png',
+                  fit: BoxFit.fill,
+                )),
+            // Positioned(
+            //   top: 100,
+            //   child: Container(
+            //     height: 100,
+            //     child: ListTile(
+            //       leading: Image.asset('asset/images/lemon.png'),
+            //       title: Text(
+            //         'Big Fishes',
+            //         style: const TextStyle(
+            //           fontFamily: 'Manrope',
+            //           fontSize: 14,
+            //         ),
+            //       ),
+            //       subtitle: Text(
+            //         '\$7.90',
+            //         style: const TextStyle(
+            //           color: Colors.black,
+            //           fontWeight: FontWeight.bold,
+            //           fontFamily: 'Manrope',
+            //         ),
+            //       ),
+            //       trailing: Text(
+            //         'ID: #765433',
+            //         style: const TextStyle(
+            //           fontSize: 14,
+            //           color: Colors.black,
+            //           fontWeight: FontWeight.bold,
+            //           fontFamily: 'Manrope',
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ]),
 
-          const Text(
-            '                Meet our rider, Rakib',
-            style: TextStyle(
-              fontSize: 12,
-              fontFamily: 'Manrope', // Change the font size as needed
-              color: Color.fromARGB(
-                  255, 40, 39, 39), // Change the text color as needed
-            ),
-          ),
+          // const Text(
+          //   '                Meet our rider, Rakib',
+          //   style: TextStyle(
+          //     fontSize: 12,
+          //     fontFamily: 'Manrope', // Change the font size as needed
+          //     color: Color.fromARGB(
+          //         255, 40, 39, 39), // Change the text color as needed
+          //   ),
+          // ),
 
 ////
 ////

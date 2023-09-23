@@ -1,4 +1,7 @@
+import 'package:figma_screen/groceryHome/productDetails4.dart';
 import 'package:flutter/material.dart';
+
+import 'productDetails2.dart';
 
 class ProductDetail3 extends StatefulWidget {
   const ProductDetail3({super.key});
@@ -42,6 +45,22 @@ class _ProductDetail3State extends State<ProductDetail3> {
               top: 10,
               right: 20,
               child: Image.asset('asset/images/bag1.png'),
+            ),
+            Positioned(
+              top: 10,
+              left: 20,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProductDetail2()));
+                },
+                child: CircleAvatar(
+                    radius: 10,
+                    backgroundColor: Color.fromARGB(255, 233, 229, 229),
+                    child: Image.asset('asset/images/Fill1.png')),
+              ),
             ),
             // FractionallySizedBox(
             //     alignment: Alignment.centerLeft,
@@ -296,7 +315,8 @@ class _ProductDetail3State extends State<ProductDetail3> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Handle the first button click
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ProductDetail4()));
               },
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(16),

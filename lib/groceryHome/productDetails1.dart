@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'categories2.dart';
 import 'data.dart';
+import 'productDetails2.dart';
 
 class ProductDetail1 extends StatefulWidget {
   const ProductDetail1({super.key});
@@ -43,6 +45,29 @@ class _ProductDetail1State extends State<ProductDetail1> {
               right: 20,
               child: Image.asset('asset/images/bag1.png'),
             ),
+            Positioned(
+              top: 10,
+              left: 20,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Categories2()));
+                },
+                child: CircleAvatar(
+                    radius: 10,
+                    backgroundColor: Color.fromARGB(255, 233, 229, 229),
+                    child: Image.asset('asset/images/Fill1.png')),
+              ),
+            ),
+            // Positioned(
+            //   top: 20,
+            //   left: 20,
+            //   child: CircleAvatar(
+            //     backgroundColor: const Color.fromARGB(255, 220, 216, 216),
+
+            //   )
+            // ),
+
             // FractionallySizedBox(
             //     alignment: Alignment.centerLeft,
             //     widthFactor: 0, // Adjust the width factor as needed
@@ -153,29 +178,46 @@ class _ProductDetail1State extends State<ProductDetail1> {
               final text = cardItem['subName'];
               final text2 = cardItem['Subname3'];
 
-              return Card(
-                child: Column(
-                  children: [
-                    Container(
-                        height: 80,
-                        width: 100,
-                        child: Image.asset(
-                          image,
-                          fit: BoxFit.contain,
-                        )),
-                    ListTile(
-                      tileColor: Color(0XF8F9FB),
-                      title: Text(title),
-                      subtitle: Text(text + text2),
-                      isThreeLine: true,
-                      trailing: const CircleAvatar(
-                          backgroundColor: Color(0xff0565b5),
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.black,
+              return GestureDetector(
+                onTap: () {
+                  switch (index) {
+                    case 0:
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProductDetail2()));
+                      break;
+                    case 1:
+                      break;
+                    // Add more cases for each card/screen as needed
+                    default:
+                      break;
+                  }
+                },
+                child: Card(
+                  child: Column(
+                    children: [
+                      Container(
+                          height: 80,
+                          width: 100,
+                          child: Image.asset(
+                            image,
+                            fit: BoxFit.contain,
                           )),
-                    ),
-                  ],
+                      ListTile(
+                        tileColor: Color(0XF8F9FB),
+                        title: Text(title),
+                        subtitle: Text(text + text2),
+                        isThreeLine: true,
+                        trailing: const CircleAvatar(
+                            backgroundColor: Color(0xff0565b5),
+                            child: Icon(
+                              Icons.add,
+                              color: Colors.black,
+                            )),
+                      ),
+                    ],
+                  ),
                 ),
               );
             },

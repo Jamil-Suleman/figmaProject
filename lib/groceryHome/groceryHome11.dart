@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:figma\lib\groceryHome\data.dart';
-
 import 'data.dart';
+import 'groceryHome22.dart';
 import 'myNavigatioBar.dart';
 import 'scren Upper section.dart';
 
@@ -27,26 +26,32 @@ class _GroceryHome1State extends State<GroceryHome11> {
               width: MediaQuery.of(context).size.width,
             ),
             Stack(children: [
-              Container(
-                alignment: Alignment.centerRight,
-                height: 123,
-                width: 269,
-                decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(20)),
-                child: const Text(
-                  'Get\n50% OFF\non first 03 order',
-                  style: TextStyle(
-                      color: Colors.white, // Text color
-                      fontSize: 20,
-                      fontFamily: 'Manrope ' // Text font size
-                      ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => GroceryHome22()));
+                },
+                child: Container(
+                  alignment: Alignment.centerRight,
+                  height: 123,
+                  width: 269,
+                  decoration: BoxDecoration(
+                      color: Colors.amber,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: const Text(
+                    'Get\n50% OFF\non first 03 order',
+                    style: TextStyle(
+                        color: Colors.white, // Text color
+                        fontSize: 20,
+                        fontFamily: 'Manrope ' // Text font size
+                        ),
+                  ),
                 ),
               ),
               Positioned(
                 top: 20,
                 left: 20,
-                child: Image.asset('asset/images/Image Icon.png'),
+                child: Image.asset('asset/images/50off.png'),
               )
             ]),
             SizedBox(
@@ -84,7 +89,7 @@ class _GroceryHome1State extends State<GroceryHome11> {
                             height: 80,
                             width: 100,
                             child: Image.asset(
-                              'asset/images/lemon.png',
+                              image,
                               fit: BoxFit.contain,
                             )),
                         ListTile(

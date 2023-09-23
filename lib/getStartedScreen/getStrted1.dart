@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../groceryHome/groceryHome11.dart';
+
 class GetStarted1 extends StatefulWidget {
   const GetStarted1({Key? key}) : super(key: key);
 
@@ -66,7 +68,7 @@ class _GetStarted1State extends State<GetStarted1> {
                 ),
                 Row(
                   children: [
-                    SizedBox(width: 40.0),
+                    const SizedBox(width: 40.0),
                     Container(
                       width: 70,
                       height: 7,
@@ -76,7 +78,7 @@ class _GetStarted1State extends State<GetStarted1> {
                             20.0), // Adjust the radius for rounded corners
                       ),
                     ),
-                    SizedBox(width: 20.0),
+                    const SizedBox(width: 20.0),
                     Container(
                       width: 40,
                       height: 7,
@@ -106,19 +108,24 @@ class _GetStarted1State extends State<GetStarted1> {
                   width: 200,
                   color: Colors.blue,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => GroceryHome11()));
+                    },
                     style: ElevatedButton.styleFrom(
                       primary: Colors.white, // Background color of the button
                       onPrimary: Colors.white, // Text color of the button
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                             10.0), // Radius for rounded corners
-                        side: BorderSide(
+                        side: const BorderSide(
                             color: Colors.black,
                             width: 1.0), // Border color and width
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Get Started     ---->',
                       style: TextStyle(color: Colors.black),
                     ),
@@ -131,7 +138,7 @@ class _GetStarted1State extends State<GetStarted1> {
                     height: 170,
                     width: MediaQuery.of(context).size.width,
                     color: Colors.blue,
-                    child: Column(children: [
+                    child: const Column(children: [
                       Center(
                         child: Text(
                           'Your holiday\nshopping\ndeliverd to Screen\none',
@@ -151,7 +158,7 @@ class _GetStarted1State extends State<GetStarted1> {
                     child: Image.asset('asset/images/Emoji.png'),
                   ),
                 ]),
-                Container(
+                const SizedBox(
                   height: 80,
                   child: Center(
                     child: Text(
@@ -214,19 +221,26 @@ class _GetStarted1State extends State<GetStarted1> {
                     width: 200,
                     color: Colors.blue,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => GroceryHome11()));
+                      },
                       style: ElevatedButton.styleFrom(
+                        // ignore: deprecated_member_use
                         primary: Colors.white, // Background color of the button
+                        // ignore: deprecated_member_use
                         onPrimary: Colors.white, // Text color of the button
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
                               10.0), // Radius for rounded corners
-                          side: BorderSide(
+                          side: const BorderSide(
                               color: Colors.black,
                               width: 1.0), // Border color and width
                         ),
                       ),
-                      child: Text(
+                      child: const Text(
                         'Get Started     ---->',
                         style: TextStyle(color: Colors.black),
                       ),
